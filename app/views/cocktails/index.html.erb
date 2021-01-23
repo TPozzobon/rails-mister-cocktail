@@ -6,5 +6,9 @@
       <h2 class="m-auto"><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
     <% end %>
   </div>
+
+  <div class="btn btn-danger">
+    <%= link_to "Create a new cocktail", new_cocktail_path %>
+  </div>
 </div>
 
