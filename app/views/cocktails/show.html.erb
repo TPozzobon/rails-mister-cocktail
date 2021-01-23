@@ -1,9 +1,17 @@
 <div class="container">
-  <div class="row">
-    <h1 class="m-auto"><%= @cocktail.name %></h1>
-  </div>
-  <div class="btn btn-danger m-auto">
-    <%= link_to "Back to cocktails", cocktails_path %>
-  </div>
+    <h1 class="m-auto row"><%= @cocktail.name %></h1>
+    <ul>
+      <% @cocktail.doses.each do |dose| %>
+        <li>
+          <%= dose.description %>
+          <%= dose.ingredient.name %>
+          <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+        </li>
+      <% end %>
+    </ul>
+
+    <%= link_to "Add a dose", new_cocktail_dose_path(@cocktail), class: "btn btn-danger" %>
+
+    <%= link_to "Back to cocktails", cocktails_path, class: "btn btn-danger" %>
 </div>
 
