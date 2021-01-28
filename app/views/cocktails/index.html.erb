@@ -12,6 +12,8 @@
 
           <% if cocktail.photo.attached? %>
             <%= cl_image_tag cocktail.photo.key, height: 175, crop: :fill %>
+          <% else %>
+            <%= image_tag('https://source.unsplash.com/500x400/?cocktail', height: 175) %>
           <% end %>
 
           <div class="card-description">
