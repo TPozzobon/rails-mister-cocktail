@@ -11,9 +11,9 @@
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2));">
 
           <% if cocktail.photo.attached? %>
-            <%= cl_image_tag cocktail.photo.key %>
+            <%= cl_image_tag cocktail.photo.key, height: 175, crop: :fill %>
           <% else %>
-            <%= "https://source.unsplash.com/500x400/?cocktail" %>
+            <%= image_tag('https://source.unsplash.com/500x400/?cocktail', height: 175) %>
           <% end %>
 
           <div class="card-description">
